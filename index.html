@@ -1,0 +1,1101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NileLogik — Securing Tomorrow Through Intelligent Investment</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --navy:       #0d1b2e;
+  --navy-mid:   #0f2040;
+  --navy-light: #1a3358;
+  /* Division colors from actual logo */
+  --water:      #3b82f6;
+  --water-light:#93c5fd;
+  --climate:    #10b981;
+  --climate-light:#6ee7b7;
+  --agro:       #f59e0b;
+  --agro-light: #fcd34d;
+  --nature:     #22c55e;
+  --nature-light:#86efac;
+  /* Gold accent */
+  --gold:       #c9a84c;
+  --gold-light: #e2c47a;
+  /* Text */
+  --white:      #ffffff;
+  --muted:      rgba(255,255,255,0.52);
+  --border:     rgba(201,168,76,0.22);
+  --pad: 100px 0;
+}
+
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--navy);
+  color: var(--white);
+  overflow-x: hidden;
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed; top:0; left:0; right:0; z-index:100;
+  display:flex; align-items:center; justify-content:space-between;
+  padding: 0 60px; height:70px;
+  background: rgba(13,27,46,0.94);
+  backdrop-filter: blur(14px);
+  border-bottom: 0.5px solid var(--border);
+}
+.nav-logo { display:flex; align-items:center; gap:12px; text-decoration:none; }
+.nav-logo-img { height:36px; width:auto; }
+.nav-wordmark {
+  font-family:'Playfair Display',serif;
+  font-size:1.3rem; font-weight:700; color:var(--white);
+}
+.nav-links { display:flex; align-items:center; gap:32px; list-style:none; }
+.nav-links a {
+  font-family:'DM Mono',monospace; font-size:0.73rem;
+  letter-spacing:1.5px; text-transform:uppercase;
+  color:var(--muted); text-decoration:none; transition:color .2s;
+}
+.nav-links a:hover { color:var(--gold-light); }
+.nav-cta {
+  font-family:'DM Mono',monospace; font-size:0.72rem;
+  letter-spacing:1.5px; text-transform:uppercase;
+  padding:9px 22px; border:1px solid var(--gold);
+  color:var(--gold); background:transparent;
+  text-decoration:none; transition:all .2s;
+}
+.nav-cta:hover { background:var(--gold); color:var(--navy); }
+
+/* ── HERO ── */
+#hero {
+  min-height:100vh; display:flex; flex-direction:column;
+  align-items:center; justify-content:center;
+  padding:130px 60px 80px; position:relative;
+  overflow:hidden; text-align:center;
+}
+.hero-grid {
+  position:absolute; inset:0; z-index:0; opacity:0.05;
+  background-image:
+    linear-gradient(rgba(201,168,76,1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(201,168,76,1) 1px, transparent 1px);
+  background-size:60px 60px;
+}
+.hero-radial {
+  position:absolute; inset:0; z-index:0;
+  background: radial-gradient(ellipse 80% 65% at 50% 42%, rgba(26,51,88,0.75) 0%, var(--navy) 68%);
+}
+.hero-content { position:relative; z-index:1; max-width:880px; }
+
+.hero-eyebrow {
+  font-family:'DM Mono',monospace; font-size:0.7rem;
+  letter-spacing:3px; text-transform:uppercase; color:var(--gold);
+  margin-bottom:24px;
+  display:flex; align-items:center; justify-content:center; gap:12px;
+}
+.hero-eyebrow::before,.hero-eyebrow::after {
+  content:''; display:block; width:40px; height:.5px; background:var(--gold);
+}
+h1.hero-title {
+  font-family:'Playfair Display',serif;
+  font-size:clamp(3rem,6vw,5.5rem); font-weight:900;
+  line-height:1.0; letter-spacing:-1.5px; margin-bottom:10px;
+}
+h1.hero-title em { font-style:italic; color:var(--gold-light); }
+.hero-sub {
+  font-family:'Playfair Display',serif;
+  font-size:clamp(1.05rem,1.8vw,1.5rem); font-style:italic;
+  color:var(--muted); margin-bottom:28px; font-weight:400;
+}
+.hero-tagline {
+  font-size:1.05rem; font-weight:300; line-height:1.85;
+  color:rgba(255,255,255,0.68); max-width:600px;
+  margin:0 auto 48px;
+}
+.hero-actions {
+  display:flex; gap:16px; justify-content:center;
+  flex-wrap:wrap; margin-bottom:64px;
+}
+.btn-primary {
+  padding:14px 36px; background:var(--gold); color:var(--navy);
+  font-family:'DM Mono',monospace; font-size:0.75rem;
+  letter-spacing:1.5px; text-transform:uppercase; font-weight:500;
+  border:none; cursor:pointer; text-decoration:none;
+  display:inline-block; transition:all .2s;
+}
+.btn-primary:hover { background:var(--gold-light); }
+.btn-ghost {
+  padding:14px 36px; background:transparent; color:var(--white);
+  font-family:'DM Mono',monospace; font-size:0.75rem;
+  letter-spacing:1.5px; text-transform:uppercase;
+  border:1px solid rgba(255,255,255,0.28);
+  cursor:pointer; text-decoration:none; display:inline-block; transition:all .2s;
+}
+.btn-ghost:hover { border-color:var(--white); }
+
+/* Division badges */
+.division-strip {
+  display:flex; gap:20px; justify-content:center; flex-wrap:wrap;
+}
+.div-badge {
+  font-family:'DM Mono',monospace; font-size:0.68rem;
+  letter-spacing:2px; text-transform:uppercase;
+  padding:6px 14px; border:0.5px solid;
+}
+.div-badge.w { color:var(--water-light);   border-color:var(--water);   }
+.div-badge.c { color:var(--climate-light); border-color:var(--climate); }
+.div-badge.a { color:var(--agro-light);    border-color:var(--agro);    }
+.div-badge.n { color:var(--nature-light);  border-color:var(--nature);  }
+
+/* ── STATS ── */
+#stats {
+  border-top:.5px solid var(--border);
+  border-bottom:.5px solid var(--border);
+  background:var(--navy-mid);
+}
+.stats-row {
+  max-width:1100px; margin:0 auto;
+  display:grid; grid-template-columns:repeat(4,1fr);
+  padding:0 60px;
+}
+.stat-cell {
+  padding:36px 32px; text-align:center;
+  border-right:.5px solid var(--border);
+}
+.stat-cell:last-child { border-right:none; }
+.stat-num {
+  font-family:'Playfair Display',serif;
+  font-size:3rem; font-weight:900; color:var(--gold-light); display:block;
+}
+.stat-lbl {
+  font-family:'DM Mono',monospace; font-size:0.65rem;
+  letter-spacing:2px; text-transform:uppercase;
+  color:var(--muted); margin-top:6px; display:block;
+}
+
+/* ── SHARED SECTION ── */
+section { padding:var(--pad); }
+.inner { max-width:1100px; margin:0 auto; padding:0 60px; }
+.sec-label {
+  font-family:'DM Mono',monospace; font-size:0.68rem;
+  letter-spacing:3px; text-transform:uppercase;
+  color:var(--gold); margin-bottom:14px; display:block;
+}
+.sec-title {
+  font-family:'Playfair Display',serif;
+  font-size:clamp(1.9rem,3.2vw,2.9rem); font-weight:700; line-height:1.15;
+  margin-bottom:18px;
+}
+.sec-title em { font-style:italic; color:var(--gold-light); }
+.sec-body {
+  font-size:1.02rem; font-weight:300; line-height:1.85;
+  color:rgba(255,255,255,0.68); max-width:640px;
+}
+
+/* ── ABOUT / MISSION ── */
+#about { background:var(--navy); }
+.about-grid {
+  display:grid; grid-template-columns:1fr 1fr;
+  gap:80px; align-items:center;
+}
+.about-logo-wrap {
+  display:flex; flex-direction:column; align-items:center; gap:0;
+}
+.about-logo-wrap img {
+  width:100%; max-width:320px;
+  filter: drop-shadow(0 0 40px rgba(201,168,76,0.18));
+}
+.divline {
+  width:1px; height:80px;
+  background:linear-gradient(to bottom, var(--gold), transparent);
+  margin-top:8px;
+}
+.div-labels {
+  display:flex; gap:16px; flex-wrap:wrap; justify-content:center;
+  margin-top:20px; font-family:'DM Mono',monospace;
+  font-size:0.62rem; letter-spacing:2px; text-transform:uppercase;
+}
+.pillars { margin-top:44px; display:flex; flex-direction:column; gap:16px; }
+.pillar {
+  display:flex; gap:16px; align-items:flex-start;
+  padding:18px 22px;
+  border:.5px solid var(--border); border-left:2px solid var(--gold);
+  background:rgba(255,255,255,0.02);
+}
+.pillar-num {
+  font-family:'DM Mono',monospace; font-size:0.62rem;
+  letter-spacing:2px; color:var(--gold); min-width:28px; padding-top:2px;
+}
+.pillar h4 { font-size:0.9rem; font-weight:500; margin-bottom:4px; }
+.pillar p  { font-size:0.83rem; font-weight:300; line-height:1.6; color:rgba(255,255,255,0.58); }
+
+/* ── DIVISIONS ── */
+#divisions { background:var(--navy-mid); }
+.div-cards {
+  display:grid; grid-template-columns:repeat(4,1fr);
+  gap:2px; margin-top:52px;
+}
+.div-card {
+  padding:36px 28px;
+  border:.5px solid var(--border);
+  background:rgba(255,255,255,0.025);
+  position:relative; overflow:hidden;
+}
+.div-card::before {
+  content:''; position:absolute; top:0; left:0; right:0; height:2px;
+}
+.div-card.w::before { background:var(--water); }
+.div-card.c::before { background:var(--climate); }
+.div-card.a::before { background:var(--agro); }
+.div-card.n::before { background:var(--nature); }
+
+.div-card-tag {
+  font-family:'DM Mono',monospace; font-size:0.62rem;
+  letter-spacing:2px; text-transform:uppercase;
+  padding:4px 10px; border:.5px solid; display:inline-block; margin-bottom:18px;
+}
+.w .div-card-tag { color:var(--water-light);   border-color:var(--water);   }
+.c .div-card-tag { color:var(--climate-light); border-color:var(--climate); }
+.a .div-card-tag { color:var(--agro-light);    border-color:var(--agro);    }
+.n .div-card-tag { color:var(--nature-light);  border-color:var(--nature);  }
+
+.div-card h3 {
+  font-family:'Playfair Display',serif;
+  font-size:1.35rem; font-weight:700; margin-bottom:6px;
+}
+.div-card-sub {
+  font-family:'DM Mono',monospace; font-size:0.62rem;
+  letter-spacing:2px; text-transform:uppercase;
+  color:var(--muted); margin-bottom:14px; display:block;
+}
+.div-card p {
+  font-size:0.85rem; font-weight:300; line-height:1.7;
+  color:rgba(255,255,255,0.58);
+}
+
+/* ── PRODUCTS ── */
+#products { background:var(--navy); }
+.products-grid {
+  display:grid; grid-template-columns:repeat(2,1fr);
+  gap:2px; margin-top:52px;
+}
+.prod-card {
+  padding:40px 36px;
+  border:.5px solid var(--border);
+  background:rgba(255,255,255,0.025);
+  transition:background .3s; position:relative;
+}
+.prod-card:hover { background:rgba(255,255,255,0.05); }
+.prod-card.live {
+  border-color:rgba(201,168,76,0.45);
+  background:rgba(201,168,76,0.04);
+}
+.prod-tag {
+  font-family:'DM Mono',monospace; font-size:0.62rem;
+  letter-spacing:2px; text-transform:uppercase;
+  padding:4px 10px; border:.5px solid; display:inline-block; margin-bottom:18px;
+}
+.prod-tag.w { color:var(--water-light);   border-color:var(--water);   }
+.prod-tag.c { color:var(--climate-light); border-color:var(--climate); }
+.prod-tag.a { color:var(--agro-light);    border-color:var(--agro);    }
+.prod-tag.n { color:var(--nature-light);  border-color:var(--nature);  }
+.prod-tag.soon { color:rgba(255,255,255,0.3); border-color:rgba(255,255,255,0.15); }
+
+.prod-name {
+  font-family:'Playfair Display',serif;
+  font-size:1.8rem; font-weight:700; margin-bottom:6px;
+}
+.prod-div {
+  font-family:'DM Mono',monospace; font-size:0.62rem;
+  letter-spacing:2px; text-transform:uppercase;
+  color:var(--muted); margin-bottom:16px; display:block;
+}
+.prod-desc {
+  font-size:0.92rem; font-weight:300; line-height:1.75;
+  color:rgba(255,255,255,0.62); margin-bottom:22px;
+}
+.prod-feats { list-style:none; display:flex; flex-direction:column; gap:7px; }
+.prod-feats li {
+  font-family:'DM Mono',monospace; font-size:0.7rem;
+  color:rgba(255,255,255,0.5);
+  display:flex; align-items:center; gap:8px;
+}
+.prod-feats li::before {
+  content:''; display:block; width:12px; height:.5px;
+  background:var(--gold); flex-shrink:0;
+}
+.prod-cta {
+  margin-top:26px; font-family:'DM Mono',monospace;
+  font-size:0.7rem; letter-spacing:2px; text-transform:uppercase;
+  color:var(--gold); display:flex; align-items:center; gap:6px;
+}
+.prod-cta::after { content:'→'; }
+
+/* mini AquaROI preview */
+.arp {
+  margin-top:24px;
+  border:.5px solid rgba(59,130,246,0.3);
+  background:rgba(13,27,46,0.85);
+  padding:16px; font-family:'DM Mono',monospace;
+}
+.arp-hdr {
+  font-size:0.6rem; letter-spacing:2px; text-transform:uppercase;
+  color:var(--water-light); margin-bottom:12px;
+  display:flex; align-items:center; gap:6px;
+}
+.arp-dot { width:5px; height:5px; border-radius:50%; background:var(--water-light); }
+.arp-metrics { display:grid; grid-template-columns:repeat(3,1fr); gap:6px; margin-bottom:12px; }
+.arp-m { background:rgba(255,255,255,0.04); border:.5px solid rgba(255,255,255,0.08); padding:8px; text-align:center; }
+.arp-m-val { font-size:1rem; color:var(--water-light); display:block; }
+.arp-m-lbl { font-size:0.52rem; letter-spacing:1px; color:rgba(255,255,255,0.38); display:block; margin-top:2px; }
+.arp-bar { display:flex; align-items:center; gap:6px; margin-bottom:5px; font-size:0.58rem; color:rgba(255,255,255,0.45); }
+.arp-bar-lbl { min-width:64px; text-align:right; }
+.arp-track { flex:1; height:3px; background:rgba(255,255,255,0.08); position:relative; }
+.arp-fill { position:absolute; left:0; top:0; bottom:0; }
+
+/* ── CONSULTING ── */
+#consulting { background:var(--navy-mid); }
+.consult-grid {
+  display:grid; grid-template-columns:1fr 1fr;
+  gap:80px; align-items:start; margin-top:52px;
+}
+.consult-services { display:flex; flex-direction:column; gap:16px; }
+.consult-service {
+  padding:24px 28px;
+  border:.5px solid var(--border); border-left:2px solid var(--gold);
+  background:rgba(255,255,255,0.02);
+}
+.consult-service h4 { font-size:0.95rem; font-weight:500; margin-bottom:6px; }
+.consult-service p  { font-size:0.85rem; font-weight:300; line-height:1.65; color:rgba(255,255,255,0.58); }
+.clients-block { margin-top:40px; }
+.clients-block h4 {
+  font-family:'DM Mono',monospace; font-size:0.65rem;
+  letter-spacing:2.5px; text-transform:uppercase; color:var(--gold);
+  margin-bottom:16px;
+}
+.client-list {
+  display:flex; flex-wrap:wrap; gap:10px;
+}
+.client-pill {
+  font-family:'DM Mono',monospace; font-size:0.68rem;
+  letter-spacing:1px; padding:6px 14px;
+  border:.5px solid rgba(255,255,255,0.18);
+  color:rgba(255,255,255,0.6);
+}
+.consult-right p {
+  font-size:1rem; font-weight:300; line-height:1.85;
+  color:rgba(255,255,255,0.65); margin-bottom:28px;
+}
+
+/* ── REGIONS ── */
+#regions { background:var(--navy); }
+.regions-grid {
+  display:grid; grid-template-columns:repeat(3,1fr);
+  gap:2px; margin-top:52px;
+}
+.region-card {
+  padding:36px 32px;
+  border:.5px solid var(--border); background:rgba(255,255,255,0.02);
+}
+.region-name {
+  font-family:'Playfair Display',serif;
+  font-size:1.25rem; font-weight:700; margin-bottom:4px;
+}
+.region-sub {
+  font-family:'DM Mono',monospace; font-size:0.62rem;
+  letter-spacing:2px; text-transform:uppercase;
+  color:var(--gold); margin-bottom:14px; display:block;
+}
+.region-desc { font-size:0.88rem; font-weight:300; line-height:1.7; color:rgba(255,255,255,0.58); }
+
+/* ── APPROACH ── */
+#approach { background:var(--navy-mid); }
+.approach-steps {
+  display:grid; grid-template-columns:repeat(4,1fr);
+  gap:0; margin-top:52px;
+}
+.step {
+  padding:32px 26px;
+  border-right:.5px solid var(--border);
+}
+.step:last-child { border-right:none; }
+.step-n {
+  font-family:'Playfair Display',serif; font-size:3.5rem; font-weight:900;
+  color:rgba(201,168,76,0.12); line-height:1; margin-bottom:14px; display:block;
+}
+.step h4 { font-size:0.95rem; font-weight:500; margin-bottom:8px; }
+.step p  { font-size:0.83rem; font-weight:300; line-height:1.68; color:rgba(255,255,255,0.52); }
+
+/* ── TEAM ── */
+#team { background:var(--navy); }
+.team-grid {
+  display:grid; grid-template-columns:repeat(2,1fr);
+  gap:2px; margin-top:52px; max-width:720px;
+}
+.team-card {
+  padding:34px 30px;
+  border:.5px solid var(--border); background:rgba(255,255,255,0.02);
+}
+.team-init {
+  width:46px; height:46px; border:1px solid var(--gold);
+  display:flex; align-items:center; justify-content:center;
+  font-family:'Playfair Display',serif; font-size:1rem; font-weight:700;
+  color:var(--gold); margin-bottom:16px;
+}
+.team-name {
+  font-family:'Playfair Display',serif;
+  font-size:1.2rem; font-weight:700; margin-bottom:4px;
+}
+.team-role {
+  font-family:'DM Mono',monospace; font-size:0.62rem;
+  letter-spacing:2px; text-transform:uppercase;
+  color:var(--gold); margin-bottom:12px; display:block;
+}
+.team-bio { font-size:0.85rem; font-weight:300; line-height:1.7; color:rgba(255,255,255,0.58); }
+
+/* ── CONTACT ── */
+#contact { background:var(--navy-mid); border-top:.5px solid var(--border); }
+.contact-grid {
+  display:grid; grid-template-columns:1fr 1fr;
+  gap:80px; align-items:start;
+}
+.contact-info p {
+  font-size:1rem; font-weight:300; line-height:1.85;
+  color:rgba(255,255,255,0.62); margin-bottom:32px;
+}
+.cdet { display:flex; gap:12px; margin-bottom:14px; align-items:center; }
+.cdet-lbl {
+  font-family:'DM Mono',monospace; font-size:0.62rem;
+  letter-spacing:2px; text-transform:uppercase; color:var(--gold); min-width:68px;
+}
+.cdet-val { font-size:0.9rem; color:rgba(255,255,255,0.72); }
+.cform { display:flex; flex-direction:column; gap:14px; }
+.cfield { display:flex; flex-direction:column; gap:5px; }
+.cfield label {
+  font-family:'DM Mono',monospace; font-size:0.62rem;
+  letter-spacing:2px; text-transform:uppercase; color:var(--muted);
+}
+.cfield input,.cfield textarea,.cfield select {
+  background:rgba(255,255,255,0.04);
+  border:.5px solid rgba(255,255,255,0.18);
+  color:var(--white); font-family:'DM Sans',sans-serif; font-size:0.9rem;
+  padding:11px 14px; outline:none; transition:border-color .2s; appearance:none;
+}
+.cfield input::placeholder,.cfield textarea::placeholder { color:rgba(255,255,255,0.22); }
+.cfield input:focus,.cfield textarea:focus,.cfield select:focus { border-color:var(--gold); }
+.cfield textarea { min-height:110px; resize:vertical; }
+.cfield select option { background:var(--navy-mid); }
+
+/* ── FOOTER ── */
+footer {
+  padding:36px 60px;
+  border-top:.5px solid var(--border); background:var(--navy);
+  display:flex; align-items:center; justify-content:space-between;
+  flex-wrap:wrap; gap:16px;
+}
+.footer-brand {
+  font-family:'Playfair Display',serif;
+  font-size:1rem; color:rgba(255,255,255,0.38);
+}
+.footer-brand strong { color:var(--white); }
+.footer-divs { display:flex; gap:18px; flex-wrap:wrap; }
+.footer-divs span {
+  font-family:'DM Mono',monospace; font-size:0.6rem; letter-spacing:1.5px; text-transform:uppercase;
+}
+.footer-copy {
+  font-family:'DM Mono',monospace; font-size:0.6rem;
+  letter-spacing:1px; color:rgba(255,255,255,0.22);
+}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp {
+  from { opacity:0; transform:translateY(22px); }
+  to   { opacity:1; transform:translateY(0); }
+}
+.hero-content > * { animation:fadeUp .8s ease both; }
+.hero-content > *:nth-child(1){animation-delay:.1s}
+.hero-content > *:nth-child(2){animation-delay:.22s}
+.hero-content > *:nth-child(3){animation-delay:.34s}
+.hero-content > *:nth-child(4){animation-delay:.46s}
+.hero-content > *:nth-child(5){animation-delay:.58s}
+.hero-content > *:nth-child(6){animation-delay:.70s}
+
+/* ── RESPONSIVE ── */
+@media(max-width:900px){
+  nav { padding:0 20px; }
+  .nav-links { display:none; }
+  #hero,.inner,#stats .stats-row { padding-left:20px; padding-right:20px; }
+  .stats-row { grid-template-columns:repeat(2,1fr); }
+  .stat-cell:nth-child(2){border-right:none;}
+  .about-grid,.contact-grid,.consult-grid { grid-template-columns:1fr; gap:40px; }
+  .div-cards,.products-grid { grid-template-columns:1fr; }
+  .regions-grid { grid-template-columns:1fr; }
+  .approach-steps { grid-template-columns:1fr 1fr; }
+  .step { border-right:none; border-bottom:.5px solid var(--border); }
+  .team-grid { grid-template-columns:1fr; }
+  footer { flex-direction:column; align-items:flex-start; padding:28px 20px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ══ NAV ══ -->
+<nav>
+  <a class="nav-logo" href="#hero">
+    <!-- Eye of the Nile inline SVG matching V1 Navy Blue -->
+    <svg class="nav-logo-img" viewBox="0 0 120 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- kohl tails -->
+      <path d="M18 30 Q6 24 1 30"  fill="none" stroke="#3b82f6" stroke-width="2" stroke-linecap="round"/>
+      <circle cx="1"   cy="30" r="2.2" fill="#3b82f6" opacity=".7"/>
+      <path d="M102 30 Q114 24 119 30" fill="none" stroke="#3b82f6" stroke-width="2" stroke-linecap="round"/>
+      <circle cx="119" cy="30" r="2.2" fill="#3b82f6" opacity=".7"/>
+      <!-- eye outline -->
+      <path d="M18 30 Q60 4 102 30 Q60 56 18 30Z" fill="rgba(59,130,246,0.07)" stroke="#3b82f6" stroke-width="1.4"/>
+      <!-- iris -->
+      <circle cx="60" cy="30" r="14" fill="none" stroke="#3b82f6" stroke-width="1"/>
+      <!-- water drop -->
+      <path d="M60 18 Q65 24 60 36 Q55 24 60 18Z" fill="#3b82f6"/>
+      <!-- Nile flow -->
+      <path d="M28 44 Q44 40 60 44 Q76 48 92 44" fill="none" stroke="#3b82f6" stroke-width=".8" opacity=".45" stroke-linecap="round"/>
+    </svg>
+    <span class="nav-wordmark">NileLogik</span>
+  </a>
+
+  <ul class="nav-links">
+    <li><a href="#about">Mission</a></li>
+    <li><a href="#divisions">Divisions</a></li>
+    <li><a href="#products">Products</a></li>
+    <li><a href="#consulting">Consulting</a></li>
+    <li><a href="#regions">Regions</a></li>
+    <li><a href="#team">Team</a></li>
+  </ul>
+
+  <a href="#contact" class="nav-cta">Contact Us</a>
+</nav>
+
+<!-- ══ HERO ══ -->
+<section id="hero">
+  <div class="hero-radial"></div>
+  <div class="hero-grid"></div>
+
+  <div class="hero-content">
+    <div class="hero-eyebrow">Intelligence for a Climate-Resilient World</div>
+
+    <h1 class="hero-title"><em>Nile</em>Logik</h1>
+    <p class="hero-sub">Securing tomorrow through intelligent investment</p>
+
+    <p class="hero-tagline">
+      AI-powered analytics spanning water, climate, agriculture, and nature — built for planners, investors, and development practitioners operating in data-scarce regions across Sub-Saharan Africa and beyond.
+    </p>
+
+    <div class="hero-actions">
+      <a href="#products" class="btn-primary">Explore Our Platforms</a>
+      <a href="#about"    class="btn-ghost">Our Mission</a>
+    </div>
+
+    <div class="division-strip">
+      <span class="div-badge w">Wat-Intel · Water</span>
+      <span class="div-badge c">Clim-Intel · Climate</span>
+      <span class="div-badge a">Agro-Intel · Agriculture</span>
+      <span class="div-badge n">Nature-Intel · Nature</span>
+    </div>
+  </div>
+</section>
+
+<!-- ══ STATS ══ -->
+<div id="stats">
+  <div class="stats-row">
+    <div class="stat-cell">
+      <span class="stat-num">4</span>
+      <span class="stat-lbl">Intelligence Divisions</span>
+    </div>
+    <div class="stat-cell">
+      <span class="stat-num">4</span>
+      <span class="stat-lbl">Analytical Platforms</span>
+    </div>
+    <div class="stat-cell">
+      <span class="stat-num">10+</span>
+      <span class="stat-lbl">Analytics Modules</span>
+    </div>
+    <div class="stat-cell">
+      <span class="stat-num">2100</span>
+      <span class="stat-lbl">Planning Horizon</span>
+    </div>
+  </div>
+</div>
+
+<!-- ══ ABOUT / MISSION ══ -->
+<section id="about">
+  <div class="inner">
+    <div class="about-grid">
+      <div>
+        <span class="sec-label">Our Mission</span>
+        <h2 class="sec-title">Intelligence for the world's most <em>resource-vulnerable</em> regions</h2>
+        <p class="sec-body">
+          NileLogik builds decision-support tools and analytical platforms for climate-resilient resource management in data-scarce environments. We integrate remote sensing, hydrological modeling, climate science, agricultural systems, and nature-based solutions to help governments, development organizations, and investors allocate capital where it matters most.
+        </p>
+        <p class="sec-body" style="margin-top:16px;">
+          Operating across Sub-Saharan Africa and transferable globally, our intelligence ecosystem spans four thematic divisions — each powered by state-of-the-art AI and grounded in rigorous field science.
+        </p>
+
+        <div class="pillars">
+          <div class="pillar">
+            <span class="pillar-num">01</span>
+            <div>
+              <h4>Geospatial AI & Remote Sensing</h4>
+              <p>Foundation model validation across satellite time series for resource estimation in ungauged and data-scarce basins.</p>
+            </div>
+          </div>
+          <div class="pillar">
+            <span class="pillar-num">02</span>
+            <div>
+              <h4>Multi-System Modeling</h4>
+              <p>Hydrological, climate, agricultural, and ecological modeling under multi-decade scenarios through 2099/2100.</p>
+            </div>
+          </div>
+          <div class="pillar">
+            <span class="pillar-num">03</span>
+            <div>
+              <h4>Investment Optimization</h4>
+              <p>Multi-criteria portfolio analysis across infrastructure, nature-based solutions, governance, and climate adaptation interventions.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-logo-wrap">
+        <svg viewBox="0 0 320 280" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:380px;display:block;margin:0 auto;">
+          <ellipse cx="160" cy="130" rx="155" ry="105" stroke="rgba(201,168,76,0.07)" stroke-width="1"/>
+          <ellipse cx="160" cy="130" rx="125" ry="82" stroke="rgba(201,168,76,0.1)" stroke-width="0.5"/>
+          <path d="M28 130 Q10 120 2 130" fill="none" stroke="#c9a84c" stroke-width="2.5" stroke-linecap="round"/>
+          <circle cx="2" cy="130" r="3" fill="#c9a84c" opacity="0.65"/>
+          <path d="M292 130 Q310 120 318 130" fill="none" stroke="#c9a84c" stroke-width="2.5" stroke-linecap="round"/>
+          <circle cx="318" cy="130" r="3" fill="#c9a84c" opacity="0.65"/>
+          <path d="M28 130 Q160 44 292 130 Q160 216 28 130Z" fill="rgba(201,168,76,0.035)"/>
+          <path d="M28 130 Q160 44 292 130 Q160 216 28 130Z" fill="none" stroke="#c9a84c" stroke-width="1.5"/>
+          <circle cx="160" cy="130" r="52" fill="none" stroke="#c9a84c" stroke-width="1.1" opacity="0.8"/>
+          <circle cx="160" cy="130" r="34" fill="none" stroke="#c9a84c" stroke-width="0.5" opacity="0.4"/>
+          <path d="M160 100 Q170 116 160 142 Q150 116 160 100Z" fill="#c9a84c"/>
+          <path d="M58 168 Q110 157 160 168 Q210 179 262 168" fill="none" stroke="#3b82f6" stroke-width="1.3" opacity="0.55" stroke-linecap="round"/>
+          <path d="M78 182 Q120 173 160 182 Q200 191 242 182" fill="none" stroke="#3b82f6" stroke-width="0.9" opacity="0.35" stroke-linecap="round"/>
+          <path d="M98 195 Q132 188 160 195 Q188 202 222 195" fill="none" stroke="#3b82f6" stroke-width="0.6" opacity="0.2" stroke-linecap="round"/>
+          <circle cx="82"  cy="218" r="5" fill="#3b82f6" opacity="0.85"/>
+          <circle cx="128" cy="225" r="5" fill="#10b981" opacity="0.85"/>
+          <circle cx="192" cy="225" r="5" fill="#f59e0b"  opacity="0.85"/>
+          <circle cx="238" cy="218" r="5" fill="#8b5cf6"  opacity="0.85"/>
+        </svg>
+        <div class="divline"></div>
+        <div class="div-labels">
+          <span style="color:var(--water-light)">Water</span>
+          <span style="color:rgba(255,255,255,0.2)">&#183;</span>
+          <span style="color:var(--climate-light)">Climate</span>
+          <span style="color:rgba(255,255,255,0.2)">&#183;</span>
+          <span style="color:var(--agro-light)">Agriculture</span>
+          <span style="color:rgba(255,255,255,0.2)">&#183;</span>
+          <span style="color:var(--nature-light)">Nature</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ DIVISIONS ══ -->
+<section id="divisions">
+  <div class="inner">
+    <span class="sec-label">Our Divisions</span>
+    <h2 class="sec-title">Four domains.<br><em>One intelligence ecosystem.</em></h2>
+
+    <div class="div-cards">
+      <div class="div-card w">
+        <span class="div-card-tag">Wat-Intel</span>
+        <h3>Water Intelligence</h3>
+        <span class="div-card-sub">AquaROI Platform</span>
+        <p>Supply-demand gap analysis, water balance estimation, and investment portfolio optimization for water-scarce regions. From ungauged catchments to national-scale planning.</p>
+      </div>
+
+      <div class="div-card c">
+        <span class="div-card-tag">Clim-Intel</span>
+        <h3>Climate Intelligence</h3>
+        <span class="div-card-sub">ClimROI Platform</span>
+        <p>Downscaled climate projections, adaptation cost-benefit analysis, and risk-adjusted investment scoring under 2°C–4°C warming scenarios through 2099.</p>
+      </div>
+
+      <div class="div-card a">
+        <span class="div-card-tag">Agro-Intel</span>
+        <h3>Agriculture Intelligence</h3>
+        <span class="div-card-sub">AgroROI Platform</span>
+        <p>Crop water requirements, irrigation investment ranking, food-water-energy nexus modeling, and smallholder resilience indices under climate stress.</p>
+      </div>
+
+      <div class="div-card n">
+        <span class="div-card-tag">Nature-Intel</span>
+        <h3>Nature Intelligence</h3>
+        <span class="div-card-sub">NatROI Platform</span>
+        <p>Carbon sequestration accounting, biodiversity co-benefit quantification, and nature-based solution investment analysis across terrestrial and wetland ecosystems.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ PRODUCTS ══ -->
+<section id="products">
+  <div class="inner">
+    <span class="sec-label">Our Platforms</span>
+    <h2 class="sec-title">Analytical tools built<br><em>for decision-makers</em></h2>
+
+    <div class="products-grid">
+
+      <!-- AquaROI -->
+      <div class="prod-card live">
+        <span class="prod-tag w">Wat-Intel · Live</span>
+        <h3 class="prod-name">AquaROI</h3>
+        <span class="prod-div">NileLogik › Wat-Intel › AquaROI</span>
+        <p class="prod-desc">
+          AI-powered water investment analysis platform for data-scarce regions. From supply-demand gap modeling to multi-criteria portfolio optimization — built for development practitioners, planners, and investors.
+        </p>
+        <ul class="prod-feats">
+          <li>Water supply-demand gap analysis · 2020–2100 planning horizon</li>
+          <li>Sensitivity analysis & multi-scenario planning</li>
+          <li>Financing gap quantification & SDG monitoring</li>
+          <li>Portfolio optimization with multi-criteria scoring</li>
+          <li>AI-assisted interpretation & narrative reporting</li>
+        </ul>
+        <div class="arp">
+          <div class="arp-hdr"><div class="arp-dot"></div>AquaROI · Wat-Intel · Live Preview</div>
+          <div class="arp-metrics">
+            <div class="arp-m"><span class="arp-m-val">2.4M</span><span class="arp-m-lbl">Population</span></div>
+            <div class="arp-m"><span class="arp-m-val">38%</span><span class="arp-m-lbl">Supply Gap</span></div>
+            <div class="arp-m"><span class="arp-m-val">$12M</span><span class="arp-m-lbl">Fin. Gap</span></div>
+          </div>
+          <div class="arp-bar">
+            <span class="arp-bar-lbl">Agriculture</span>
+            <div class="arp-track"><div class="arp-fill" style="width:72%;background:#f59e0b"></div></div>
+            <span style="font-size:.58rem;color:rgba(255,255,255,.4)">72%</span>
+          </div>
+          <div class="arp-bar">
+            <span class="arp-bar-lbl">Domestic</span>
+            <div class="arp-track"><div class="arp-fill" style="width:18%;background:#3b82f6"></div></div>
+            <span style="font-size:.58rem;color:rgba(255,255,255,.4)">18%</span>
+          </div>
+          <div class="arp-bar">
+            <span class="arp-bar-lbl">Livestock</span>
+            <div class="arp-track"><div class="arp-fill" style="width:10%;background:#10b981"></div></div>
+            <span style="font-size:.58rem;color:rgba(255,255,255,.4)">10%</span>
+          </div>
+        </div>
+        <span class="prod-cta">Launch AquaROI</span>
+      </div>
+
+      <!-- ClimROI -->
+      <div class="prod-card">
+        <span class="prod-tag soon">Clim-Intel · Coming Soon</span>
+        <h3 class="prod-name">ClimROI</h3>
+        <span class="prod-div">NileLogik › Clim-Intel › ClimROI</span>
+        <p class="prod-desc">
+          Climate adaptation investment intelligence — linking downscaled CMIP6 projections to infrastructure resilience scoring and risk-adjusted portfolio returns through 2099.
+        </p>
+        <ul class="prod-feats">
+          <li>CMIP6 downscaling integration</li>
+          <li>Adaptation cost-benefit analysis</li>
+          <li>Climate risk scoring for investment portfolios</li>
+          <li>Extreme event probability modeling</li>
+        </ul>
+      </div>
+
+      <!-- AgroROI -->
+      <div class="prod-card">
+        <span class="prod-tag soon">Agro-Intel · Coming Soon</span>
+        <h3 class="prod-name">AgroROI</h3>
+        <span class="prod-div">NileLogik › Agro-Intel › AgroROI</span>
+        <p class="prod-desc">
+          Precision agricultural investment optimization integrating food systems modeling, irrigation efficiency analysis, and smallholder resilience indices under climate stress scenarios.
+        </p>
+        <ul class="prod-feats">
+          <li>Crop water requirement modeling</li>
+          <li>Irrigation investment ranking</li>
+          <li>Food-water-energy nexus analysis</li>
+          <li>Smallholder vulnerability mapping</li>
+        </ul>
+      </div>
+
+      <!-- NatROI -->
+      <div class="prod-card">
+        <span class="prod-tag soon">Nature-Intel · Coming Soon</span>
+        <h3 class="prod-name">NatROI</h3>
+        <span class="prod-div">NileLogik › Nature-Intel › NatROI</span>
+        <p class="prod-desc">
+          Nature-based solution investment analysis — quantifying carbon sequestration, biodiversity co-benefits, and ecosystem service returns across forests, wetlands, grasslands, and agroforestry.
+        </p>
+        <ul class="prod-feats">
+          <li>Carbon sequestration & storage accounting</li>
+          <li>Biodiversity co-benefit quantification</li>
+          <li>NbS investment portfolio optimization</li>
+          <li>NLCR = B + R + A − GHG framework</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══ CONSULTING ══ -->
+<section id="consulting">
+  <div class="inner">
+    <span class="sec-label">Consulting Services</span>
+    <h2 class="sec-title">Expert advisory for<br><em>high-stakes decisions</em></h2>
+
+    <div class="consult-grid">
+      <div>
+        <p class="sec-body">
+          Beyond our platforms, NileLogik provides strategic consulting to development banks, governments, international NGOs, and conservation finance partners. We bring deep expertise in translating complex environmental and hydrological science into investable project designs.
+        </p>
+        <p class="sec-body" style="margin-top:16px;">
+          Our engagements range from project preparation and feasibility assessments to peer review of technical methodologies and capacity building for in-country teams.
+        </p>
+
+        <div class="clients-block">
+          <h4>Who We Work With</h4>
+          <div class="client-list">
+            <span class="client-pill">Development Banks</span>
+            <span class="client-pill">National Governments</span>
+            <span class="client-pill">International NGOs</span>
+            <span class="client-pill">Conservation Finance</span>
+            <span class="client-pill">Research Institutions</span>
+            <span class="client-pill">Climate Investors</span>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="consult-services">
+          <div class="consult-service">
+            <h4>Water Security Assessments</h4>
+            <p>Supply-demand analysis, water balance estimation, and investment gap quantification for rural and peri-urban contexts in data-scarce environments.</p>
+          </div>
+          <div class="consult-service">
+            <h4>Climate Adaptation Planning</h4>
+            <p>Scenario-based vulnerability assessments, adaptation pathway design, and cost-benefit analysis aligned with national development priorities.</p>
+          </div>
+          <div class="consult-service">
+            <h4>Nature-Based Solution Finance</h4>
+            <p>Carbon accounting, ecosystem service valuation, and investment readiness preparation for NbS portfolios including forests, wetlands, and grasslands.</p>
+          </div>
+          <div class="consult-service">
+            <h4>Research & Technical Advisory</h4>
+            <p>Geospatial AI validation, hydrological model calibration, and methodology development for academic, governmental, and institutional research programs.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ REGIONS ══ -->
+<section id="regions">
+  <div class="inner">
+    <span class="sec-label">Geographic Focus</span>
+    <h2 class="sec-title">Where our intelligence<br><em>matters most</em></h2>
+
+    <div class="regions-grid">
+      <div class="region-card">
+        <h3 class="region-name">Sub-Saharan Africa</h3>
+        <span class="region-sub">Primary Region</span>
+        <p class="region-desc">
+          Dryland systems across the Sahel, Horn of Africa, East Africa, and Southern Africa — with deep field experience across multiple countries. Focus on transboundary basins, ungauged catchments, and rural resource security under accelerating climate change.
+        </p>
+      </div>
+
+      <div class="region-card">
+        <h3 class="region-name">Arid & Semi-Arid Regions</h3>
+        <span class="region-sub">Transferable Framework</span>
+        <p class="region-desc">
+          Methodologies designed for any data-scarce arid or semi-arid environment worldwide. The NileLogik framework is built to transfer — from Madagascar to the Sahel to Central Asia — wherever data scarcity and climate vulnerability converge.
+        </p>
+      </div>
+
+      <div class="region-card">
+        <h3 class="region-name">Conservation Finance (USA)</h3>
+        <span class="region-sub">Active Engagement</span>
+        <p class="region-desc">
+          Current conservation finance engagements in southeastern Pennsylvania, including carbon accounting and biodiversity co-benefit analysis for 40+ preserves in partnership with Natural Lands Trust and Essential Utilities.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ APPROACH ══ -->
+<section id="approach">
+  <div class="inner">
+    <span class="sec-label">Our Methodology</span>
+    <h2 class="sec-title">From satellite data to<br><em>investment decisions</em></h2>
+
+    <div class="approach-steps">
+      <div class="step">
+        <span class="step-n">01</span>
+        <h4>Remote Sensing & Data Fusion</h4>
+        <p>Foundation model validation against ensemble benchmarks. Multi-source satellite time series for resource estimation in ungauged, data-scarce environments.</p>
+      </div>
+      <div class="step">
+        <span class="step-n">02</span>
+        <h4>Multi-System Modeling</h4>
+        <p>Hydrological, climate, agricultural, and ecological modeling with sectoral demand projections and scenario planning through 2099/2100 under RCP pathways.</p>
+      </div>
+      <div class="step">
+        <span class="step-n">03</span>
+        <h4>Investment Analysis</h4>
+        <p>Multi-criteria scoring, sensitivity analysis, and financing gap quantification across infrastructure, NbS, agricultural, and governance intervention portfolios.</p>
+      </div>
+      <div class="step">
+        <span class="step-n">04</span>
+        <h4>AI-Powered Insights</h4>
+        <p>LLM-assisted interpretation translating complex analytical outputs into decision-ready briefings and investment narratives for non-technical stakeholders.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ TEAM ══ -->
+<section id="team">
+  <div class="inner">
+    <span class="sec-label">Team</span>
+    <h2 class="sec-title">Built by researchers.<br><em>For decision-makers.</em></h2>
+
+    <div class="team-grid">
+      <div class="team-card">
+        <div class="team-init">DY</div>
+        <h3 class="team-name">David Yaméogo</h3>
+        <span class="team-role">Founder & CEO</span>
+        <p class="team-bio">
+          PhD candidate in Sustainable Engineering at Villanova University. FAO World Food Forum Young Scientist. COP28 presenter. Extensive field research across Sub-Saharan Africa in partnership with leading development organizations. Originally from Burkina Faso.
+        </p>
+      </div>
+
+      <div class="team-card" style="border:.5px dashed rgba(201,168,76,0.2);background:transparent;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:34px;">
+        <p style="font-family:'Playfair Display',serif;font-size:1rem;font-style:italic;color:rgba(255,255,255,0.28);margin-bottom:20px;">
+          We are growing.
+        </p>
+        <a href="#contact" class="btn-ghost" style="font-size:0.68rem;padding:10px 20px;">Join NileLogik</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CONTACT ══ -->
+<section id="contact">
+  <div class="inner">
+    <div class="contact-grid">
+      <div class="contact-info">
+        <span class="sec-label">Get In Touch</span>
+        <h2 class="sec-title">Partner with<br><em>NileLogik</em></h2>
+        <p>
+          We collaborate with development banks, governments, international NGOs, conservation organizations, and research institutions. Whether you need a custom platform deployment, a strategic consulting engagement, or a research partnership — we would like to hear from you.
+        </p>
+        <div class="cdet">
+          <span class="cdet-lbl">Email</span>
+          <span class="cdet-val">info@nilelogik.com</span>
+        </div>
+        <div class="cdet">
+          <span class="cdet-lbl">Web</span>
+          <span class="cdet-val">www.nilelogik.com</span>
+        </div>
+        <div class="cdet">
+          <span class="cdet-lbl">Platform</span>
+          <span class="cdet-val">AquaROI · ClimROI · AgroROI · NatROI</span>
+        </div>
+      </div>
+
+      <form class="cform" onsubmit="handleSubmit(event)">
+        <div class="cfield">
+          <label>Full Name</label>
+          <input type="text" placeholder="Your name">
+        </div>
+        <div class="cfield">
+          <label>Organization</label>
+          <input type="text" placeholder="World Bank, UNDP, CRS…">
+        </div>
+        <div class="cfield">
+          <label>Email</label>
+          <input type="email" placeholder="you@organization.org">
+        </div>
+        <div class="cfield">
+          <label>Area of Interest</label>
+          <select>
+            <option value="">Select a topic</option>
+            <option>AquaROI — Water Intelligence</option>
+            <option>ClimROI — Climate Intelligence</option>
+            <option>AgroROI — Agriculture Intelligence</option>
+            <option>NatROI — Nature Intelligence</option>
+            <option>Consulting Engagement</option>
+            <option>Research Partnership</option>
+            <option>Investment / Funding</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="cfield">
+          <label>Message</label>
+          <textarea placeholder="Tell us about your project or needs…"></textarea>
+        </div>
+        <button type="submit" class="btn-primary" style="align-self:flex-start">Send Message</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <div class="footer-brand">
+    <strong>NileLogik</strong> — Securing tomorrow through intelligent investment
+  </div>
+  <div class="footer-divs">
+    <span style="color:var(--water-light)">Wat-Intel</span>
+    <span style="color:rgba(255,255,255,0.2)">·</span>
+    <span style="color:var(--climate-light)">Clim-Intel</span>
+    <span style="color:rgba(255,255,255,0.2)">·</span>
+    <span style="color:var(--agro-light)">Agro-Intel</span>
+    <span style="color:rgba(255,255,255,0.2)">·</span>
+    <span style="color:var(--nature-light)">Nature-Intel</span>
+  </div>
+  <span class="footer-copy">&copy; 2026 NileLogik · nilelogik.com</span>
+</footer>
+
+<script>
+function handleSubmit(e) {
+  e.preventDefault();
+  const btn = e.target.querySelector('button[type="submit"]');
+  btn.textContent = 'Message Sent ✓';
+  btn.style.background = '#10b981';
+  btn.style.color = '#fff';
+  btn.style.borderColor = '#10b981';
+  setTimeout(() => {
+    btn.textContent = 'Send Message';
+    btn.style.background = '';
+    btn.style.color = '';
+    btn.style.borderColor = '';
+  }, 3000);
+}
+
+// Scroll fade-in
+const io = new IntersectionObserver(entries => {
+  entries.forEach(el => {
+    if (el.isIntersecting) {
+      el.target.style.opacity = '1';
+      el.target.style.transform = 'translateY(0)';
+    }
+  });
+}, { threshold: 0.07 });
+
+document.querySelectorAll(
+  '.pillar,.div-card,.prod-card,.region-card,.step,.team-card,.stat-cell,.consult-service'
+).forEach(el => {
+  el.style.opacity = '0';
+  el.style.transform = 'translateY(18px)';
+  el.style.transition = 'opacity .55s ease, transform .55s ease';
+  io.observe(el);
+});
+</script>
+</body>
+</html>
